@@ -24,7 +24,72 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+    <main>
+        <section>
 
+        </section>
+        
+        <div id="avatar" class = "flex justify-center "> <!--add a gap plus tard-->
+            <h2 ><i data-lucide="circle-user"> </i>Hi, user!</h2>
+        </div>
+            
+
+        <div id="lamps" class = "flex justify-center flex-row"> 
+            <!--Pick a lamp, need a menu to pick a lamp and a toggle on off (button)--> 
+            <!--select tag html, rentrer les options, voir docu, toggle = input (cest le tag), il s appelle checkbox-->
+
+            <!--menu déroulant-->
+            <label for="lamp-select">Your lamps:</label>
+
+                <select name="lamps" id="lamps-select">
+                <option value="">--Select your lamp:--</option>
+                <option value="lamp1">Lamp 1</option>
+                <option value="lamp2">Lamp 2</option>
+                </select>
+
+            <!--on/off toggle-->
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+
+        <div id=" brightness" class="flex justify-center"> 
+            <!--Adjust the brightness-->
+            <!--inuput range, voir mdn-->
+            <div>
+                <p>Adjust the brightness:</p>
+
+            </div>
+
+            <div>
+                <input
+                type="range"
+                id="brightness"
+                name="brightness--"
+                min="0"
+                max="100"
+                value="90"
+                step="10" /></main>
+            </div>
+        </div>
+           
+
+        <div id="favorites" class="flex flex-wrap"> 
+            <!--Your colors, box flex-->
+        COULOURS
+        </div>
+
+
+        <div id="hex"> 
+            <!--Adafruit alwan--></div>
+
+<!--a.buttom, class button sur css pour le visu-->
+        <div id="schedule"> 
+            Schedule your lighting</div>
+
+    </main>
 
     
     <!-- lucide icons -->
