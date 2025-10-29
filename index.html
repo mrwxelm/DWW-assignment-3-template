@@ -15,26 +15,34 @@
     <!-- ########################   scripts and ressources  ######################## -->
     <!-- Adafruit IO custom library -->
     <script src="https://cdn.jsdelivr.net/gh/methio/adafruitIO-class@latest/index.js"></script>
+
     <!-- alwan color picker -->
     <script src="https://cdn.jsdelivr.net/npm/alwan@2/dist/js/alwan.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alwan@2/dist/css/alwan.min.css"/>
+
     <!-- get color name from its hex value -->
      <script src="https://chir.ag/projects/ntc/ntc.js"></script>
+
+
     <!-- script custom -->
     <script src="script.js" defer></script>
+
+
 </head>
 <body>
     <main>
+
+
         <section>
 
         </section>
         
-        <div id="avatar" class = "flex justify-center "> <!--add a gap plus tard-->
-            <h2 ><i data-lucide="circle-user"> </i>Hi, user!</h2>
+        <div id="intro" class = "flex justify-center padding"> <!--add a gap plus tard-->
+            <h2 id="avatar"><i data-lucide="circle-user"> </i>Hi, user!</h2>
         </div>
             
 
-        <div id="lamps" class = "flex justify-center flex-row"> 
+        <div id="lamps" class = "flex justify-center flex-row padding"> 
             <!--Pick a lamp, need a menu to pick a lamp and a toggle on off (button)--> 
             <!--select tag html, rentrer les options, voir docu, toggle = input (cest le tag), il s appelle checkbox-->
 
@@ -55,7 +63,7 @@
         </div>
 
 
-        <div id=" brightness" class="flex justify-center"> 
+        <div id=" brightness" class="flex justify-center padding"> 
             <!--Adjust the brightness-->
             <!--inuput range, voir mdn-->
             <div>
@@ -75,27 +83,56 @@
             </div>
         </div>
            
-
-        <div id="favorites" class="flex flex-wrap"> 
+        <h4 class="flex justify-center">Your recent colors</h4>
+        <div id="favorites" class="flex justify-center flex-wrap padding container"> 
             <!--Your colors, box flex-->
-        COULOURS
         </div>
 
 
-        <div id="hex"> 
-            <!--Adafruit alwan--></div>
+        <div id="hex" class="flex justify-center padding"> 
+            <!--Adafruit alwan--> 
 
-<!--a.buttom, class button sur css pour le visu-->
-        <div id="schedule"> 
-            Schedule your lighting</div>
+            <input type="text" id="color-input">
+            <script src="https://cdn.jsdelivr.net/npm/alwan@2/dist/js/alwan.min.js"></script>
 
-    </main>
+            <script>
+                const picker = new Alwan('#color-input', {
+                default: '#DF3838',  
+                theme: 'light',      
+                toggle: true,       
+                });
 
-    
-    <!-- lucide icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        lucide.createIcons();
-    </script>
+                //color picker changes colors
+                picker.on('change', (color) => {
+                document.getElementById('preview').style.background = color.hex;
+                });
+            </script>
+
+    <!--a.buttom, class button sur css pour le visu-->
+
+        </main>
+
+
+    <!--function to create color pickers-->
+        <script>
+            function colorPicker(){
+                const picker = new Alwan('#color-input', {
+                default: '#DF3838',  
+                theme: 'light',      
+                toggle: true,       
+                });
+                picker.on('change', (color) => {
+                document.getElementById('preview').style.background = color.hex;
+                });
+            }
+        </script>
+        
+
+        
+        <!-- lucide icons -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
 </body>
 </html>
