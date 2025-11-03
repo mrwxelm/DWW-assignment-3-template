@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const user = "mrwxelm";
     const key = "aio_CUTa43FjQ3HfUfw0uwCoAY0f00bi"
+    const key = "apikey"
     const IO = new AdafruitIO(user, key);
 
     //destination pour les couleurs a ajouter
