@@ -10,6 +10,7 @@
     --c-details : #D82784;
     --c-contrast : #1B0033;
     --c-main : #EADEF3;
+    --c-button : #F5BDDB;
 
     --space-05 : .5em;
     --space-1 : 1em;
@@ -60,88 +61,147 @@
   flex-wrap: wrap;
 }
 .padding{
-  padding: var(--space-2);
+  padding: 1.5em;
 }
 
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 body {  
-    font-size : 16px;
+    font-size : 12px;
     font-family: "Inter", sans-serif;
     font-style: "bold";
     background-color : var(--c-main);
 
+  #avatar{
+    display: flex;          
+    align-items: center;     
+    gap: var(--space-05);              
+  }
+
+  /*slider on off*/
   .switch {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 34px;
+    width :30px;    
+    height: 16px;   
   }
 
+  /* Masquer l'input*/
   .switch input {
     opacity: 0;
     width: 0;
     height: 0;
   }
 
+  /* fond du toggle*/
   .slider {
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+    border-radius: 20px;         
+    cursor: pointer;
+    transition: 0.3s;
   }
 
-  .slider:before {
-    position: absolute;
+  /* rond qui slide */
+  .slider::before {
     content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+    position: absolute;
+    width: 14px;              
+    height: 14px;
+    left: 1px;                  
+    bottom: 1px;
+    background-color: #fff;
+    border-radius: 50%;       
+    transition: 0.3s;
   }
 
+  /* on */
   input:checked + .slider {
-    background-color: #1B0033;
+    background-color: var(--c-contrast);   /* couleur du fond quand c'est activé */
   }
 
-  input:focus + .slider {
-    box-shadow: 0 0 1px #1B0033;
+  /*le rond va vers la droit qd on appuie dessus*/
+  input:checked + .slider::before {
+    transform: translateX(14px); 
+  }
+  /*lamps menu deroulant*/
+  #lamps{
+    color:var(--c-main);
+    background-color: var(--c-details); /*j'arrive pas a arrondir le menu en entier*/
+    stroke: var(--c-contrast);
   }
 
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
+  #lamps-toggle{
+    display: flex;
+    gap: var(--space-1);
 
-  .slider.round {
-    border-radius: 34px;
   }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  #favorites{
-    stroke: #1B0033;
-  }
-
-.container {
-      display: flex;            
-      justify-content: space-around; 
-      align-items: center;       
-      border: 1px solid #1B0033; 
-      padding: 20px;
-      width: 400px;              
-      margin: 20px auto; 
-      background-color: #EADEF3; 
-    }
   
+  /*adjust brightness*/
+   #adjust-brightness{
+    size: var(--space-05);
+    gap: var(--space-1);
+  }
+
+  /*arranger le style*/
+  #brightness{
+    accent-color: var(--c-details);
+  }
+
+  /*box de couleurs*/
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;    /*container centré*/ 
+  align-items: center; /*carres centrés*/
+  gap: 0.5em;                    /*entre les carres*/
+  border: 1.5px solid #1B0033;
+  border-radius: 0.5em;          
+  background-color: #EADEF3;
+  padding: 1em;
+  margin: 2em auto;
+  width: 90%;                   
+  max-width: 22em;               
+  height: auto;                 
+ 
+}
+
+  .light-color {
+    width: var(--space-2);
+    height: var(--space-2);
+    border-radius: var(--space-05);
+    border: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+    
+  }
+  #light-color {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  #button-add-color{ /*comment mettre de l'expace entre le color picker et ca*/
+    background-color: var(--c-button);
+    color: var(--c-details);
+    border-radius: var(--space-05);
+    padding: var(--space-05);
+    stroke: var(--c-contrast);
+    stroke-width: var(--space-05);
+    margin-top: var(--space-1);
+    gap: .35em;
+  }
+
+
+  
+
+
+
 }

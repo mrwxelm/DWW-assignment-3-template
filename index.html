@@ -27,30 +27,23 @@
     <!-- script custom -->
     <script src="script.js" defer></script>
 
-
 </head>
 <body>
+
     <main>
-
-
-        <section>
-
-        </section>
-        
-        <div id="intro" class = "flex justify-center padding"> <!--add a gap plus tard-->
+        <!--hi user-->
+        <div id="intro" class = " padding"> 
             <h2 id="avatar"><i data-lucide="circle-user"> </i>Hi, user!</h2>
         </div>
             
-
-        <div id="lamps" class = "flex justify-center flex-row padding"> 
-            <!--Pick a lamp, need a menu to pick a lamp and a toggle on off (button)--> 
-            <!--select tag html, rentrer les options, voir docu, toggle = input (cest le tag), il s appelle checkbox-->
-
+        <!--choose a lamp et on off-->
+        <div id="lamps-toggle" class = "flex flex-row padding"> 
+    
             <!--menu déroulant-->
-            <label for="lamp-select">Your lamps:</label>
+            <label for="lamp-select"></label>
 
-                <select name="lamps" id="lamps-select">
-                <option value="">--Select your lamp:--</option>
+                <select name="lamps" id="lamps">
+                <option value="">--Your lamps:--</option>
                 <option value="lamp1">Lamp 1</option>
                 <option value="lamp2">Lamp 2</option>
                 </select>
@@ -62,12 +55,10 @@
             </label>
         </div>
 
-
-        <div id=" brightness" class="flex justify-center padding"> 
-            <!--Adjust the brightness-->
-            <!--inuput range, voir mdn-->
+        <!--brightness-->
+        <div id="adjust-brightness" class="padding"> 
             <div>
-                <p>Adjust the brightness:</p>
+                <p>Brightness:</p>
 
             </div>
 
@@ -79,56 +70,28 @@
                 min="0"
                 max="100"
                 value="90"
-                step="10" /></main>
+                step="5" />
             </div>
         </div>
            
-        <h4 class="flex justify-center">Your recent colors</h4>
-        <div id="favorites" class="flex justify-center flex-wrap padding container"> 
-            <!--Your colors, box flex-->
+        <!--box of colors-->
+        <h4 class="flex flex-wrap">Choose your color</h4>
+
+        <div id="favorites" class="flex flex-wrap padding container"> 
+            <!--Your colors-->
+            <div id="light-color" class="is-flex row"></div>
         </div>
 
+        <!--Alwan color picker-->
+        <div id="alwan-picker"></div>
+  
 
-        <div id="hex" class="flex justify-center padding"> 
-            <!--Adafruit alwan--> 
+        <p class="primary button flex justify-center" id="button-add-color" popovertarget="color-picker-pop">Add <span id="new-color-name"> this color</span></p>
 
-            <input type="text" id="color-input">
-            <script src="https://cdn.jsdelivr.net/npm/alwan@2/dist/js/alwan.min.js"></script>
-
-            <script>
-                const picker = new Alwan('#color-input', {
-                default: '#DF3838',  
-                theme: 'light',      
-                toggle: true,       
-                });
-
-                //color picker changes colors
-                picker.on('change', (color) => {
-                document.getElementById('preview').style.background = color.hex;
-                });
-            </script>
-
-    <!--a.buttom, class button sur css pour le visu-->
-
-        </main>
+    </main>
 
 
-    <!--function to create color pickers-->
-        <script>
-            function colorPicker(){
-                const picker = new Alwan('#color-input', {
-                default: '#DF3838',  
-                theme: 'light',      
-                toggle: true,       
-                });
-                picker.on('change', (color) => {
-                document.getElementById('preview').style.background = color.hex;
-                });
-            }
-        </script>
-        
 
-        
         <!-- lucide icons -->
         <script src="https://unpkg.com/lucide@latest"></script>
         <script>
