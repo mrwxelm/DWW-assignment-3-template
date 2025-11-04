@@ -6,7 +6,7 @@
 
 #### Schematic view 
 
-![schematic view](Screenshot 2025-11-04 154053.png)
+![schematic view](schematic.png)
 
 #### Photographs
 Youtube video of the prototype lerping between colors
@@ -19,11 +19,12 @@ alt="youtube demo video" width="400" height="300" border="10" /></a>
 
 #### Moodboard
 
-![figma moodboard](Screenshot 2025-11-04 153808.png)
+![figma moodboard](moodboard.png)
 
 #### User flow 
 [See the user flow in figma↗](https://www.figma.com/design/9MlYNytWHyqbC7BJuOsNAq/DWW---Marwa?node-id=30-69&t=T9MseBbveKoqyLF3-1)
 
-![figma user flow](Screenshot 2025-11-04 154855.png)
+![figma user flow](userFlowFigma.png)
 
-![obtained website]()
+![obtained website](web1.png)
+![obtained website (continued)](web2.png)
