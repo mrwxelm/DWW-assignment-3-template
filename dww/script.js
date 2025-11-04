@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // documentation for Name That Color (NTC) : https://chir.ag/projects/ntc/
 
     const user = "mrwxelm";
-    const key = "aio_CUTa43FjQ3HfUfw0uwCoAY0f00bi"
+    const key = "secret"
     const IO = new AdafruitIO(user, key);
 
     //destination pour les couleurs a ajouter
