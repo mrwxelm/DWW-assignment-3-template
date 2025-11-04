@@ -27,40 +27,38 @@
     <!-- script custom -->
     <script src="script.js" defer></script>
 
+
 </head>
 <body>
 
     <main>
         <!--hi user-->
-        <div id="intro" class = " padding"> 
+        <div id="intro" class = " flex justify-center align-center padding"> 
             <h2 id="avatar"><i data-lucide="circle-user"> </i>Hi, user!</h2>
         </div>
             
         <!--choose a lamp et on off-->
-        <div id="lamps-toggle" class = "flex flex-row padding"> 
+        <div id="lamps-toggle" class = "flex flex-row padding justify-center align-center"> 
     
             <!--menu déroulant-->
             <label for="lamp-select"></label>
 
                 <select name="lamps" id="lamps">
-                <option value="">--Your lamps:--</option>
+                <option value="default-lamp-text">Your lamps:</option>
                 <option value="lamp1">Lamp 1</option>
                 <option value="lamp2">Lamp 2</option>
                 </select>
 
             <!--on/off toggle-->
             <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
             </label>
         </div>
 
         <!--brightness-->
-        <div id="adjust-brightness" class="padding"> 
-            <div>
-                <p>Brightness:</p>
-
-            </div>
+        <div id="adjust-brightness" class="padding flex justify-center align-center"> 
+            <i data-lucide="sun-medium"></i>
 
             <div>
                 <input
@@ -72,22 +70,27 @@
                 value="90"
                 step="5" />
             </div>
-        </div>
+        
            
+            <i data-lucide="sun"></i>
+        </div>
+        
         <!--box of colors-->
-        <h4 class="flex flex-wrap">Choose your color</h4>
+        <h4 class="flex flex-wrap justify-center">Choose your color</h4>
 
-        <div id="favorites" class="flex flex-wrap padding container"> 
+        <div id="favorites" class="flex flex-wrap padding container justify-around justify-center align-center"> 
             <!--Your colors-->
             <div id="light-color" class="is-flex row"></div>
         </div>
 
-        <!--Alwan color picker-->
-        <div id="alwan-picker"></div>
-  
+        <section id = "alwan-color-picker">
+            <div id="alwan-picker"></div> <!--mis la div ou le color picker apparait dans une section pour mieux gerer son design-->
+        </section>
 
-        <p class="primary button flex justify-center" id="button-add-color" popovertarget="color-picker-pop">Add <span id="new-color-name"> this color</span></p>
+    
+        <p class="primary button" id="button-add-color" popovertarget="color-picker-pop">Add <span id="new-color-name"> this color</span></p>
 
+        
     </main>
 
 
